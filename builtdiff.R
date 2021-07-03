@@ -4,12 +4,9 @@
 # > Rscript builtdiff.R <number of phrases>
 
 # Output: 
-
 # built different
 # ---------------
 # manufactured inconsistent
-
-
 
 if (!requireNamespace("syn", quietly = TRUE)) {install.packages("syn")}
 
