@@ -1,3 +1,17 @@
+#!/usr/bin/env Rscript
+
+
+# Usage: 
+# > Rscript builtdiff.R <number of phrases>
+
+# Output: 
+
+# built different
+# ---------------
+# manufactured inconsistent
+
+
+
 if (!requireNamespace("syn", quietly = TRUE)) {install.packages("syn")}
 
 library(syn)
@@ -9,7 +23,7 @@ if(length(args) == 0){
   N <- 1
 } else {
     if (length(args) > 1 | is.na(as.numeric(args[1]))){
-    stop("Usage: <N> Number of phrases", call.=FALSE)} else {
+    stop("<Number of phrases>", call.=FALSE)} else {
     N <- as.numeric(args[1])}}
 
 prebuilt <- syn("built")
