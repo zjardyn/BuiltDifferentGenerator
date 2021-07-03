@@ -1,6 +1,5 @@
 #!/usr/bin/env Rscript
 
-
 # Usage: 
 # > Rscript builtdiff.R <number of phrases>
 
