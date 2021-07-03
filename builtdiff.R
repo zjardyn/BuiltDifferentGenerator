@@ -5,9 +5,13 @@ library(syn)
 args <- commandArgs(trailingOnly = T)
 options(warn=-1)
 
-if (length(args) > 1 | is.na(as.numeric(args[1]))){
-  stop("Usage: <N> Number of phrases", call.=FALSE)}
-  
+if(length(args) == 0){
+  N <- 1
+} else {
+    if (length(args) > 1 | is.na(as.numeric(args[1]))){
+    stop("Usage: <N> Number of phrases", call.=FALSE)} else {
+    N <- as.numeric(args[1])}}
+
 prebuilt <- syn("built")
 
 removeIndicesBuilt <- c(1,4,5,6,8,9,10,11,13,17:21,26,31,32,33,36,39,49,41,42,46,47,52:55,57,61:65,69:71,74,75:83)
@@ -22,12 +26,6 @@ different <- predifferent[-removeIndicesDifferent]
 
 BuiltDiffSyns <- function() {
   cat(paste(sample(built,1), sample(different,1), sep = " " ), sep = '\n')
-}
-
-if(length(args)==0){
-  N <- 1
-} else {
-  N <- as.numeric(args[1])
 }
 
 cat("built different","---------------", sep = "\n")
